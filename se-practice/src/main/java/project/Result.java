@@ -6,6 +6,7 @@ public enum Result {
     private int obp;
     private int ops;
     private int slg;
+    private int tb;
 
     static {
         S.ops = 2000;
@@ -40,6 +41,17 @@ public enum Result {
         E.slg = -1;
     }
 
+    static {
+        S.tb = 1;
+        D.tb = 2;
+        T.tb = 3;
+        HR.tb = 4;
+        BB.tb = 0;
+        K.tb = 0;
+        HBP.tb = 0;
+        E.tb = 0;
+    }
+
     public int getObp(Result r) {
         return r.obp;
     }
@@ -50,5 +62,9 @@ public enum Result {
 
     public int getSlg(Result r){
         return r.slg;
+    }
+
+    public int getTb(Result r){
+        return r.tb;
     }
 }
