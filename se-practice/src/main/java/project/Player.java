@@ -25,6 +25,8 @@ public class Player {
     //Total Bases
     private int BB;
     //Walks
+    private int HBP;
+    //Hit By Pitch
     private int K;
     //Strikeouts
     private int SB;
