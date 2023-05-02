@@ -23,7 +23,13 @@ public class Player {
         this.atBats = new HashSet<>();
     }
 
-    
+    public void addGame(){
+        //adds a game with its at bats, changes stats to reflect as such
+    }
+
+    public void addAtBat(){
+        //adds at bad and changes relevant stats
+    }
 
     public String getName() {
         return name;
