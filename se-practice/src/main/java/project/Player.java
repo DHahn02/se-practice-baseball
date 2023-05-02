@@ -1,5 +1,10 @@
 package project;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Player {
     //each player has a Name, ID, Overall batting stats, Game batting stats.
     private String name;
@@ -7,12 +12,18 @@ public class Player {
     //player ID
 
     private double[] stats;
+    private List<Game> games;
+    private Set<AtBat> atBats;
 
     public Player(String name, int id){
         this.name = name;
         this.id = id;
         this.stats = new double[19];
+        this.games = new ArrayList<>();
+        this.atBats = new HashSet<>();
     }
+
+    
 
     public String getName() {
         return name;
