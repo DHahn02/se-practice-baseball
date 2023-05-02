@@ -41,6 +41,7 @@ public class Player {
     //On Base plus Slugging
     private long WAR;
     //Wins Above Replacement
+
     private int[] stats;
     public Player(String name, int ID, int[] stats ){
         this.name = name;
