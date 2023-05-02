@@ -5,44 +5,6 @@ public class Player {
     private String name;
     private int id;
     //player ID
-    private double GP;
-    //Games Played
-    private int AB;
-    //At Bats
-    private int R;
-    //Runs
-    private int H;
-    //Hits
-    private int S;
-    //singles
-    private int D;
-    //Doubles
-    private int T;
-    //Triples
-    private int HR;
-    //Home Runs
-    private int RBI;
-    //Runs Batted In
-    private int TB;
-    //Total Bases
-    private int BB;
-    //Walks
-    private int HBP;
-    //Hit By Pitch
-    private int K;
-    //Strikeouts
-    private int SB;
-    //Stolen Bases
-    private long AVG;
-    //Batting Average
-    private long OBP;
-    //On Base Percentage
-    private long SLG;
-    //Slugging Percentage
-    private long OPS;
-    //On Base plus Slugging
-    private long WAR;
-    //Wins Above Replacement
 
     private double[] stats;
 
@@ -62,10 +24,6 @@ public class Player {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public double getGP() {
@@ -100,125 +58,123 @@ public class Player {
         this.stats[3] = h;
     }
 
-    public double getSingles(){
-
-    }
-
-    public void setSingles(){
-
-    }
-
-    public double getD() {
+    public double getS(){
         return this.stats[4];
     }
 
-    public void setD(int d) {
-        this.stats[4] = d;
+    public void setS(int s){
+        this.stats[4] = s;
     }
 
-    public double getT() {
+    public double getD() {
         return this.stats[5];
     }
 
-    public void setT(int t) {
-        this.stats[5] = t;
+    public void setD(int d) {
+        this.stats[5] = d;
     }
 
-    public double getHR() {
+    public double getT() {
         return this.stats[6];
     }
 
-    public void setHR(int HR) {
-        this.stats[6] = HR;
+    public void setT(int t) {
+        this.stats[6] = t;
     }
 
-    public double getRBI() {
+    public double getHR() {
         return this.stats[7];
     }
 
-    public void setRBI(int RBI) {
-        this.stats[7] = RBI;
+    public void setHR(int HR) {
+        this.stats[7] = HR;
     }
 
-    public double getTB() {
+    public double getRBI() {
         return this.stats[8];
     }
 
-    public void setTB(int TB) {
-        this.stats[8] = TB;
+    public void setRBI(int RBI) {
+        this.stats[8] = RBI;
     }
 
-    public double getBB() {
+    public double getTB() {
         return this.stats[9];
     }
 
-    public void setBB(int BB) {
-        this.stats[9] = BB;
+    public void setTB(int TB) {
+        this.stats[9] = TB;
     }
 
-    public double getHBP() {
+    public double getBB() {
         return this.stats[10];
     }
 
-    public void setHBP(int HBP) {
-        this.stats[10] = HBP;
+    public void setBB(int BB) {
+        this.stats[10] = BB;
     }
 
-    public double getK() {
+    public double getHBP() {
         return this.stats[11];
     }
 
-    public void setK(int k) {
-        this.stats[11] = k;
+    public void setHBP(int HBP) {
+        this.stats[11] = HBP;
     }
 
-    public double getSB() {
+    public double getK() {
         return this.stats[12];
     }
 
-    public void setSB(int SB) {
-        this.stats[12] = SB;
+    public void setK(int k) {
+        this.stats[12] = k;
     }
 
-    public double getAVG() {
+    public double getSB() {
         return this.stats[13];
     }
 
-    public void setAVG(long AVG) {
-        this.stats[13] = AVG;
+    public void setSB(int SB) {
+        this.stats[13] = SB;
     }
 
-    public double getOBP() {
+    public double getAVG() {
         return this.stats[14];
     }
 
-    public void setOBP(long OBP) {
-        this.stats[14] = OBP;
+    public void setAVG(double AVG) {
+        this.stats[14] = AVG;
     }
 
-    public double getSLG() {
+    public double getOBP() {
         return this.stats[15];
     }
 
-    public void setSLG(long SLG) {
-        this.stats[15] = SLG;
+    public void setOBP(double OBP) {
+        this.stats[15] = OBP;
     }
 
-    public double getOPS() {
+    public double getSLG() {
         return this.stats[16];
     }
 
-    public void setOPS(long OPS) {
-        this.stats[16] = OPS;
+    public void setSLG(double SLG) {
+        this.stats[16] = SLG;
     }
 
-    public double getWAR() {
+    public double getOPS() {
         return this.stats[17];
     }
 
-    public void setWAR(long WAR) {
-        this.stats[17] = WAR;
+    public void setOPS(double OPS) {
+        this.stats[17] = OPS;
     }
 
+    public double getWAR() {
+        return this.stats[18];
+    }
 
+    public void setWAR(double WAR) {
+        this.stats[18] = WAR;
+    }
 }
