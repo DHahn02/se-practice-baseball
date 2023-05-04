@@ -18,7 +18,11 @@ public class CommandCenter {
     }
 
     public List<Player> getLineup(){
+<<<<<<< HEAD
         return Collections.emptyList();
+=======
+        /**OLD MCDONALD HAD A FARM EAYY EAYYYYYY OHHHHHH**/
+>>>>>>> a677657da9d873d6ad583b39f397278913474534
     }
 
     public Player getPlayerToDemote(){
