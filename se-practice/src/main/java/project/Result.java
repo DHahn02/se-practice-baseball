@@ -1,12 +1,13 @@
 package project;
 
 public enum Result {
-    S, D, T, HR, BB, K, HBP, E;
+    S, D, T, HR, BB, K, HBP, E, O;
 
     private int obp;
     private int ops;
     private int slg;
     private int tb;
+    private int avg;
 
     static {
         S.ops = 2000;
@@ -17,6 +18,11 @@ public enum Result {
         K.ops = 0;
         HBP.ops = -1;
         E.ops = -1;
+        O.ops = 0;
+    }
+
+    static {
+        S.avg =
     }
 
     static {
@@ -28,6 +34,7 @@ public enum Result {
         K.obp = 0;
         HBP.obp = 1000;
         E.obp = -1;
+        O.obp = 0;
     }
 
     static {
@@ -39,6 +46,7 @@ public enum Result {
         K.slg = 0;
         HBP.slg = -1;
         E.slg = -1;
+        O.slg = 0;
     }
 
     static {
@@ -50,6 +58,7 @@ public enum Result {
         K.tb = 0;
         HBP.tb = 0;
         E.tb = 0;
+        O.tb = 0;
     }
 
     public int getObp(Result r) {

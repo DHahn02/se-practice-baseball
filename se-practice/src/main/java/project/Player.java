@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Collections;
 
 public class Player implements Comparable<Player> {
     //each player has a Name, ID, Overall batting stats, Game batting stats.
@@ -14,13 +15,24 @@ public class Player implements Comparable<Player> {
     private double[] stats;
     private List<Game> games;
     private Set<AtBat> atBats;
+    private Set<Position> positions;
 
-    public Player(String name, int id){
+    public Player(String name, int id, Position pos){
         this.name = name;
         this.id = id;
         this.stats = new double[19];
         this.games = new ArrayList<>();
         this.atBats = new HashSet<>();
+        this.positions = new HashSet<>();
+        this.positions.add(pos);
+    }
+
+    public void addPosition(Position p){
+        this.positions.add(p);
+    }
+
+    public Set<Position> getPositions(){
+        return Collections.unmodifiableSet(this.positions);
     }
 
     public void addGame(){
