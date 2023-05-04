@@ -8,6 +8,13 @@ public class Game {
 
     public Game(String id){
         this.id = id;
+        this.atBatList = new ArrayList<>();
+    }
+
+    public Game(String id, AtBat ab){
+        this.id = id;
+        this.atBatList = new ArrayList<>();
+        this.atBatList.add(ab);
     }
 
     public Game(String id, List<AtBat> abs){
