@@ -6,23 +6,25 @@ public class CommandCenter {
     PriorityQueue<Player> lineup;
     PriorityQueue<Player> demotions;
     Map<String, Player> players;
+    List<Game> games;
     //uli has necrophilia
     public CommandCenter(){
         this.lineup = new PriorityQueue<>(Comparator.reverseOrder());
         this.demotions = new PriorityQueue<>();
         this.players = new HashMap<>();
+        this.games = new ArrayList<>();
     }
 
     public void addAtBat(Player p, AtBat a, Game g){
         return;
     }
 
+    public void addGame(Game g){
+        this.games.add(g);
+    }
+
     public List<Player> getLineup(){
-<<<<<<< HEAD
         return Collections.emptyList();
-=======
-        /**OLD MCDONALD HAD A FARM EAYY EAYYYYYY OHHHHHH**/
->>>>>>> a677657da9d873d6ad583b39f397278913474534
     }
 
     public Player getPlayerToDemote(){
