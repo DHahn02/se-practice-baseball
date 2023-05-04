@@ -18,7 +18,6 @@ public class CommandCenter {
     }
 
     public List<Player> getLineup(){
-        /**OLD MCDONALD HAD A FARM EAYY EAYYYYYY OHHHHHH**/
     }
 
 
