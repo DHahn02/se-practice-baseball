@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Game {
-    private List<AtBat> atBats = new ArrayList<>();
-
+    private List<AtBat> atBatList = new ArrayList<>();
 }
+    public void addBatToGame(AtBat){
+        atBatList.add(AtBat);
+    }
