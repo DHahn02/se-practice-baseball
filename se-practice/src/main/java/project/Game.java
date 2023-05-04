@@ -38,6 +38,7 @@ public class Game {
         return Collections.unmodifiableList(this.atBatList);
     }
 
+    @Override
     public boolean equals(Object o){
         if(o == null) return false;
         if(o == this) return true;

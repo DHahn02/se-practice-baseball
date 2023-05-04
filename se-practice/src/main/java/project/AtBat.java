@@ -6,12 +6,14 @@ public class AtBat {
         RHP, LHP
     };
     private Pitcher pitcher;
+    private Player batter;
     private int inning;
 
-    public AtBat(Result r, Pitcher p, int inning){
+    public AtBat(Player b, Result r, Pitcher p, int inning){
         this.result = r;
         this.pitcher = p;
         this.inning = inning;
+        this.batter = b;
     }
 
     public Result getResult() {
@@ -24,5 +26,9 @@ public class AtBat {
 
     public int getInning() {
         return inning;
+    }
+
+    public Player getBatter(){
+        return this.batter;
     }
 }
