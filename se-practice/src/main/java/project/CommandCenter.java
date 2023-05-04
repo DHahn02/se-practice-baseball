@@ -1,5 +1,5 @@
 package project;
-import Calendar;
+import java.time.LocalDateTime;
 
 public class CommandCenter {
 
@@ -9,9 +9,10 @@ public class CommandCenter {
 
 
     private String getDateInt(){
-        String year = now.getDate();
-        String month = now.getMonth();
-        String day = now.getDay();
+        LocalDateTime now = LocalDateTime.now();
+        String year = String.valueOf(now.getYear());
+        String month = String.valueOf(now.getMonthValue());
+        String day = String.valueOf(now.getDayOfMonth());
         return year+month+day;
     }
 
