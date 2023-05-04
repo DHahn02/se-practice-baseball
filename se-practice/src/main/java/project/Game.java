@@ -3,7 +3,7 @@ package project;
 import java.util.*;
 
 public class Game {
-    private List<AtBat> atBatList = new ArrayList<>();
+    private List<AtBat> atBatList;
     private String id;
 
     public Game(String id){
