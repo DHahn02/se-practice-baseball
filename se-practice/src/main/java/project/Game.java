@@ -1,13 +1,42 @@
 package project;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class Game {
     private List<AtBat> atBatList = new ArrayList<>();
-}
-    public void addBatToGame(AtBat){
-        atBatList.add(AtBat);
+    private String id;
+
+    public Game(String id){
+        this.id = id;
     }
-//
+
+    public Game(String id, List<AtBat> abs){
+        this.id = id;
+        this.atBatList = abs;
+    }
+
+    public String getID(){
+        return this.id;
+    }
+
+    public void addAtBatToGame(AtBat ab) {
+        this.atBatList.add(ab);
+    }
+
+    public void addAtBats(List<AtBat> abs){
+        this.atBatList.addAll(abs);
+    }
+
+    public List<AtBat> getAtBats(){
+        return Collections.unmodifiableList(this.atBatList);
+    }
+
+    public boolean equals(Object o){
+        if(o == null) return false;
+        if(o == this) return true;
+        if(o instanceof Game obj){
+            return obj.id.equals(this.id);
+        }
+        return false;
+    }
+}
