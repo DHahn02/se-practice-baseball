@@ -9,7 +9,7 @@ import java.util.Collections;
 public class Player implements Comparable<Player> {
     //each player has a Name, ID, Overall batting stats, Game batting stats.
     private String name;
-    private int id;
+    private String id;
     //player ID
 
     private double[] stats;
@@ -17,7 +17,7 @@ public class Player implements Comparable<Player> {
     private Set<AtBat> atBats;
     private Set<Position> positions;
 
-    public Player(String name, int id, Position pos){
+    public Player(String name, String id, Position pos){
         this.name = name;
         this.id = id;
         this.stats = new double[19];
@@ -51,7 +51,7 @@ public class Player implements Comparable<Player> {
         this.name = name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -242,5 +242,15 @@ public class Player implements Comparable<Player> {
     @Override
     public int compareTo(Player o) {
         return 0;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null) return false;
+        if(obj == this) return true;
+        if(obj instanceof Player o){
+            return o.id.equals(this.id);
+        }
+        return false;
     }
 }
