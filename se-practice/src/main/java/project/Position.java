@@ -1,5 +1,5 @@
 package project;
 
 public enum Position {
-    ONE, TWO, THREE, PITCHER, CATCHER, SS, RF, LF, CF
+    FIRST, SECOND, THIRD, PITCHER, CATCHER, SS, RF, LF, CF
 }
