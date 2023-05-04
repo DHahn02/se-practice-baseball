@@ -2,11 +2,23 @@ package project;
 
 public enum Result {
     S, D, T, HR, BB, K, HBP, E;
+    private double avg;
+    private double obp;
+    private double ops;
+    private double slg;
+    private double tb;
 
-    private int obp;
-    private int ops;
-    private int slg;
-    private int tb;
+
+    static {
+        S.avg = 1000;
+        D.avg = 1000;
+        T.avg = 1000;
+        HR.avg = 1000;
+        BB.avg = 1000;
+        K.avg = 0;
+        HBP.avg = 1000;
+        E.avg = -1;
+    }
 
     static {
         S.ops = 2000;
@@ -52,19 +64,20 @@ public enum Result {
         E.tb = 0;
     }
 
-    public int getObp(Result r) {
+    private double getAvg(Result r ){ return r.avg;}
+    public double getObp(Result r) {
         return r.obp;
     }
 
-    public int getOps(Result r){
+    public double getOps(Result r){
         return r.ops;
     }
 
-    public int getSlg(Result r){
+    public double getSlg(Result r){
         return r.slg;
     }
 
-    public int getTb(Result r){
+    public double getTb(Result r){
         return r.tb;
     }
 }
