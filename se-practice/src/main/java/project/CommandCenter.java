@@ -19,6 +19,14 @@ public class CommandCenter {
         return;
     }
 
+    public Collection<Player> getPlayers(){
+        return Collections.unmodifiableCollection(this.players.values());
+    }
+
+    public void addPlayer(Player p){
+        this.players.put(p.getId(), p);
+    }
+
     public void addGame(Game g){
         this.games.add(g);
     }
