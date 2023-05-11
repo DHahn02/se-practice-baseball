@@ -64,7 +64,7 @@ public class CommandCenter {
     public List<Player> getLineup(){
         Stack<Player> extra = new Stack<>();
         Stack<Player> lineup = new Stack<>();
-        while(!hasAllPositions(lineup)){
+        while(lineup.size() < 9){
             Player player = this.lineup.remove();
             if(!hasPosition(lineup, player)){
                 lineup.add(player);
@@ -77,7 +77,7 @@ public class CommandCenter {
         }
     }
 
-    private boolean hasAllPositions(Stack<Player> ps){
+    private boolean hasPosition(Stack<Player> ps, Player p){
         Stack<Player> temp = new Stack<>();
         while(ps.size() > 0){
 
