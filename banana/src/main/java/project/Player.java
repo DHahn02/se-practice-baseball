@@ -39,7 +39,7 @@ public class Player implements Comparable<Player> {
         //adds a game with its at bats, changes stats to reflect as such
     }
 
-    public void addAtBat(){
+    public void addAtBat(AtBat ab){
         //adds at bad and changes relevant stats
     }
 
