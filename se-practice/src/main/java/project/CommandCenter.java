@@ -38,22 +38,27 @@ public class CommandCenter {
 
     public void addPlayer(Player p){
         this.players.put(p.getId(), p);
+        this.lineup.add(p);
+        this.demotions.add(p);
     }
 
     public void addGame(Game g){
         this.games.add(g);
     }
 
-    public void startGame(Game g, AtBat.Pitcher p){
-        this.activeGame = g;
+    public void startGame(boolean dh, AtBat.Pitcher p){
+        endGame();
+        this.activeGame = new Game(getDateInt(dh));
         this.activePitcher = p;
         this.inning = 1;
     }
 
     public void endGame(){
+        if(this.activeGame != null) {
+            this.games.add(this.activeGame);
+        }
         this.activeGame = null;
         this.activePitcher = null;
-        this.games.add(this.activeGame);
     }
 
     public List<Player> getLineup(){
