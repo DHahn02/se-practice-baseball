@@ -62,7 +62,26 @@ public class CommandCenter {
     }
 
     public List<Player> getLineup(){
-        return Collections.emptyList();
+        Stack<Player> extra = new Stack<>();
+        Stack<Player> lineup = new Stack<>();
+        while(!hasAllPositions(lineup)){
+            Player player = this.lineup.remove();
+            if(!hasPosition(lineup, player)){
+                lineup.add(player);
+            }else{
+                extra.push(player);
+            }
+        }
+        for(Position pos : Position.values()){
+
+        }
+    }
+
+    private boolean hasAllPositions(Stack<Player> ps){
+        Stack<Player> temp = new Stack<>();
+        while(ps.size() > 0){
+
+        }
     }
 
     public Player getPlayerToDemote(){

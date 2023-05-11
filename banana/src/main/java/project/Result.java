@@ -64,22 +64,22 @@ public enum Result {
         E.tb = 0;
     }
 
-    private double getAvg(Result r ){
+    public double getAVG(Result r ){
         return r.avg;
     }
-    public double getObp(Result r) {
+    public double getOBP(Result r) {
         return r.obp;
     }
 
-    public double getOps(Result r){
+    public double getOPS(Result r){
         return r.ops;
     }
 
-    public double getSlg(Result r){
+    public double getSLG(Result r){
         return r.slg;
     }
 
-    public int getTb(Result r){
+    public int getTB(Result r){
         return r.tb;
     }
 }

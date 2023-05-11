@@ -249,29 +249,32 @@ public class Player implements Comparable<Player> {
         }
     }
 
-    private int getOverallScore(Player p){
+    private int getOverallScore(Player b){
         int score = 0;
-        for(int i=0;i<p.games.size();i++){
-            if(i > games.size() - 3) {
-                score += 100*p.getAVG();
-                score += 100*p.getOPS();
-                score += 80*p.getOBP();
-                score += 50*p.getH();
-            }else if(i > games.size()-7){
-               score += 60*p.getAVG();
-               score += 60*p.getOPS();
-               score += 40*p.getOBP();
-               score += 20*p.getH();
-           }else if(i > games.size()-14){
-               score += 40*p.getAVG();
-               score += 40*p.getOPS();
-               score += 30*p.getOBP();
-               score += 15*p.getH();
-           }else{
-                score += 10*p.getAVG();
-                score += 10*p.getOPS();
-                score += 8*p.getOBP();
-                score += 4*p.getH();
+        for(int i=0;i<b.games.size();i++){
+            for(AtBat a : b.games.get(i).getAtBats()) {
+                Result p = a.getResult();
+                if (i > games.size() - 3) {
+                    score += 100 * p.getAVG(p);
+                    score += 100 * p.getOPS(p);
+                    score += 80 * p.getOBP(p);
+                    score += 50 * p.getTB(p);
+                } else if (i > games.size() - 7) {
+                    score += 60 * p.getAVG(p);
+                    score += 60 * p.getOPS(p);
+                    score += 40 * p.getOBP(p);
+                    score += 20 * p.getTB(p);
+                } else if (i > games.size() - 14) {
+                    score += 40 * p.getAVG(p);
+                    score += 40 * p.getOPS(p);
+                    score += 30 * p.getOBP(p);
+                    score += 15 * p.getTB(p);
+                } else {
+                    score += 10 * p.getAVG(p);
+                    score += 10 * p.getOPS(p);
+                    score += 8 * p.getOBP(p);
+                    score += 4 * p.getTB(p);
+                }
             }
         }
         return score;
