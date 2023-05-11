@@ -10,7 +10,7 @@ public class CommandCenter {
     Game activeGame;
     int inning;
     AtBat.Pitcher activePitcher;
-    //uli has necrophilia
+
     public CommandCenter(){
         this.lineup = new PriorityQueue<>(Comparator.reverseOrder());
         this.demotions = new PriorityQueue<>();
@@ -22,7 +22,9 @@ public class CommandCenter {
     }
 
     public void addAtBat(Player p, Result r){
-        this.activeGame.addAtBatToGame(new AtBat(p, r, this.activePitcher, this.inning));
+        AtBat ab = new AtBat(p, r, this.activePitcher, this.inning);
+        this.activeGame.addAtBatToGame(ab);
+        p.addAtBat(ab);
     }
 
     public void nextInning(){

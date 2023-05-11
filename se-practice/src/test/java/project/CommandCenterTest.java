@@ -31,7 +31,7 @@ public class CommandCenterTest {
         commandRoom.addPlayer(new Player("Wilmer Flores", "WFlores04", THIRD));
         commandRoom.addPlayer(new Player("Carlos Beltran", "CBeltran15", CF));
         commandRoom.addPlayer(new Player("Ike Davis", "IDavis29", FIRST));
-        
+
 
     }
 
