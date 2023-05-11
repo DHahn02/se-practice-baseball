@@ -1,4 +1,5 @@
 package project;
+import java.awt.geom.Point2D;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -61,27 +62,36 @@ public class CommandCenter {
         this.activePitcher = null;
     }
 
-    public List<Player> getLineup(){
+    public Stack<Player> getLineup(){
         Stack<Player> extra = new Stack<>();
         Stack<Player> lineup = new Stack<>();
         while(lineup.size() < 9){
             Player player = this.lineup.remove();
-            if(!hasPosition(lineup, player)){
+            if(!hasPosition(lineup, player) && !(player.getPositions().size() <= 1 && player.getPositions().contains(Position.PITCHER))){
                 lineup.add(player);
             }else{
                 extra.push(player);
             }
         }
-        for(Position pos : Position.values()){
-
-        }
+        return lineup;
     }
 
     private boolean hasPosition(Stack<Player> ps, Player p){
         Stack<Player> temp = new Stack<>();
+        boolean fwepoj = false;
         while(ps.size() > 0){
-
+            int wq = 0;
+            for(Position q : p.getPositions()) {
+                Player l = ps.pop();
+                if (l.getPositions().contains(q)){
+                    wq++;
+                }
+                if(wq == p.getPositions().size()){
+                    return true;
+                }
+            }
         }
+        return false;
     }
 
     public Player getPlayerToDemote(){
