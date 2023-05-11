@@ -3,8 +3,7 @@ package project;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static project.Position.*;
 
 public class CommandCenterTest {
@@ -45,6 +44,9 @@ public class CommandCenterTest {
     @Test
     public void getPlayerToDemote(){
         Player p = new Player("Jose Reyes", "JReyes07", SS);
-
+        commandRoom.addPlayer(p);
+        Player result = commandRoom.getPlayerToDemote();
+        System.out.println(result.getName());
+        assertNotNull(result);
     }
 }

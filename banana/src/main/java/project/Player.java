@@ -1,10 +1,6 @@
 package project;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.Collections;
+import java.util.*;
 
 public class Player implements Comparable<Player> {
     //each player has a Name, ID, Overall batting stats, Game batting stats.
@@ -241,7 +237,47 @@ public class Player implements Comparable<Player> {
      */
     @Override
     public int compareTo(Player o) {
-        return 0;
+        if(o == null) throw new NoSuchElementException();
+        int oscore = getOverallScore(o);
+        int tscore = getOverallScore(this);
+        if(tscore > oscore){
+            return 1;
+        }else if(tscore < oscore){
+            return -1;
+        }else{
+            return 0;
+        }
+    }
+
+    private int getOverallScore(Player b){
+        int score = 0;
+        for(int i=0;i<b.games.size();i++){
+            for(AtBat a : b.games.get(i).getAtBats()) {
+                Result p = a.getResult();
+                if (i > games.size() - 3) {
+                    score += 100 * p.getAVG(p);
+                    score += 100 * p.getOPS(p);
+                    score += 80 * p.getOBP(p);
+                    score += 50 * p.getTB(p);
+                } else if (i > games.size() - 7) {
+                    score += 60 * p.getAVG(p);
+                    score += 60 * p.getOPS(p);
+                    score += 40 * p.getOBP(p);
+                    score += 20 * p.getTB(p);
+                } else if (i > games.size() - 14) {
+                    score += 40 * p.getAVG(p);
+                    score += 40 * p.getOPS(p);
+                    score += 30 * p.getOBP(p);
+                    score += 15 * p.getTB(p);
+                } else {
+                    score += 10 * p.getAVG(p);
+                    score += 10 * p.getOPS(p);
+                    score += 8 * p.getOBP(p);
+                    score += 4 * p.getTB(p);
+                }
+            }
+        }
+        return score;
     }
 
     @Override

@@ -38,26 +38,50 @@ public class CommandCenter {
 
     public void addPlayer(Player p){
         this.players.put(p.getId(), p);
+        this.lineup.add(p);
+        this.demotions.add(p);
     }
 
     public void addGame(Game g){
         this.games.add(g);
     }
 
-    public void startGame(Game g, AtBat.Pitcher p){
-        this.activeGame = g;
+    public void startGame(boolean dh, AtBat.Pitcher p){
+        endGame();
+        this.activeGame = new Game(getDateInt(dh));
         this.activePitcher = p;
         this.inning = 1;
     }
 
     public void endGame(){
+        if(this.activeGame != null) {
+            this.games.add(this.activeGame);
+        }
         this.activeGame = null;
         this.activePitcher = null;
-        this.games.add(this.activeGame);
     }
 
     public List<Player> getLineup(){
-        return Collections.emptyList();
+        Stack<Player> extra = new Stack<>();
+        Stack<Player> lineup = new Stack<>();
+        while(!hasAllPositions(lineup)){
+            Player player = this.lineup.remove();
+            if(!hasPosition(lineup, player)){
+                lineup.add(player);
+            }else{
+                extra.push(player);
+            }
+        }
+        for(Position pos : Position.values()){
+
+        }
+    }
+
+    private boolean hasAllPositions(Stack<Player> ps){
+        Stack<Player> temp = new Stack<>();
+        while(ps.size() > 0){
+
+        }
     }
 
     public Player getPlayerToDemote(){
